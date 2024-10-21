@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DitzDev Portfolio</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="nav_header">
+      <div class="logo">Welcome, You!</div>
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="header_list"><a href="#about">Tentang Saya</a></li>
+        <li class="header_list"><a href="#skills">Keahlian</a></li>
+        <li class="header_list"><a href="#projects">Project</a></li>
+        <li class="header_list"><a href="#contact">Find Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="animate-on-scroll">
+      <div class="about-content">
+        <img src="assets/profile_ditzdev.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Tentang Saya</h2>
+        <p>Halo! Kenalin gua DitzDev!, Gua ngoding cuman untuk memuaskan rasa gabut, Termasuk hobi sih, Dan yah maap kalau web portfolio ini sederhana, Gua cuman ga pengen di bilang "Programmer kok ga punya portfolio"🗿</p>
+      </div>
+    </section>
+    
+    <section id="skills" class="animate-on-scroll">
+      <h2>Keahlian</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fab fa-cuttlefish fa-3x"></i>
+          <p>C++</p>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-python fa-3x"></i>
+          <p>Python</p>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-golang fa-3x"></i>
+          <p>Golang</p>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-js-square fa-3x"></i>
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-java fa-3x"></i>
+          <p>Java</p>
+        </div>
+        <div class="skill-item">
+          <i class="fab fa-android fa-3x"></i>
+          <p>Kotlin</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="animate-on-scroll">
+      <h2>Project</h2>
+      <div class="project-grid">
+        <div class="project-item">
+          <h3>Aplikasi TabungaKu</h3>
+          <p>Status: <span class="status completed">Sudah Selesai</span></p>
+          <p>Deskripsi: Aplikasi untuk membantu pengguna mengelola tabungan mereka dengan mudah dan efektif.</p>
+        </div>
+        <div class="project-item">
+          <h3>Lizard Programming Language</h3>
+          <p>Status: <span class="status in-progress">Belum Selesai</span></p>
+          <p>Deskripsi: Bahasa Pemograman yang di rakit oleh C++ dan memiliki tujuan agar bisa berfungsi di perangkat lainnya seperti Android, MacOs, Windows, IOS, Dan Linux, Memiliki tipe data yang statis, Fungsional, Dan Oriented Object Programming (OOP).</p>
+          <a href="https://wa.me/6285717062467?text=i+want+contribute+Lizard+Language"><button style="margin-top: 20px;" class="btn info">Kontribusi Sekarang</button></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="animate-on-scroll">
+      <h2>Find Me At:</h2>
+      <div class="contact-buttons">
+        <a href="https://whatsapp.com/channel/0029VaYyCtsHltYBaNA0DQ36" class="contact-button whatsapp-community effects1">
+          <i style="margin-right: 5px;" class="fab fa-whatsapp"></i>
+          Komunitas WhatsApp
+        </a>
+        <a href="https://wa.me/6285717062467" class="contact-button whatsapp-personal effects1">
+          <i style="margin-right: 5px;" class="fab fa-whatsapp"></i>
+          WhatsApp Pribadi
+        </a>
+        <a href="https://tiktok.com/ditz.ofc" class="contact-button tiktok">
+          <i style="margin-right: 5px;" class="fab fa-tiktok"></i>
+          TikTok
+        </a>
+        <a href="https://youtube.com/@DitzOfc" class="contact-button youtube">
+          <i style="margin-right: 5px;" class="fab fa-youtube"></i>
+          YouTube
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 DitzDev. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementBottom = element.getBoundingClientRect().bottom;
+          if (elementTop < window.innerHeight && elementBottom > 0) {
+            element.classList.add('visible');
+          }
+        });
+      };
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+    const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('show');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
